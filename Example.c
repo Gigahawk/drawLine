@@ -5,7 +5,7 @@
 
 int main()
 {
-	//defining a window size
+	// defining a window size 
 	int rows, cols;
 	rows = 30;
 	cols = 70;
@@ -13,7 +13,11 @@ int main()
 	//Initializing a window with the above sizes (don't worry abt the int ** apparently it's too hard for APSC 160)
 	int **window = initWindow(rows, cols);
 
-	//Puts lines on the window in the shape of a star using '*'
+	/*Puts lines on the window in the shape of a star using '*'
+	 * NOTE: coordinates are zero-indexed
+	 * i.e. If I set rows=30; then the first row is 0, then 1, then 2 ... and the last one is 29.
+	 * This is why the corner/edge coordinates are row-1 or cols-1.
+	*/
 	drawLineChar(window, 0, 15, 35, 15, '*');
 	drawLineChar(window, 69, 15, 35, 15, '*');
 	drawLineChar(window, 35, 29, 35, 15, '*');
