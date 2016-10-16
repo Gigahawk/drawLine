@@ -10,7 +10,7 @@ Using this in Visual Studio:
 
 - It probably won't compile, this is because Visual Studio compiles in C++ mode by default and somethingsomething that apparently breaks pointer types or whatever soooo
 	- On the top bar go to: Debug > $YOUR_PROJECT Properties...
-	- In the window that opens up: C/C++ > Advanced
+	- On the left in the window that opens up: C/C++ > Advanced
 	- The second entry (Compile As) should say "Default", change it to :"Compile as C Code (/TC)"
 	
 - Write ya code
