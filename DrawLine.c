@@ -7,18 +7,17 @@
 int ** initWindow(int rows, int cols)
 {
 	int **window;
-	window = malloc(rows * sizeof *window);
+	window = (int **)malloc(rows * sizeof *window);
 	for (int i = 0; i<rows; i++)
 	{
-		window[i] = malloc(cols * sizeof *window[i]);
+		window[i] = (int *)malloc(cols * sizeof *window[i]);
 	}
-	int i, j;
 
-	for (i = (rows - 1); i >= 0; i--)
+	for (int j = (rows - 1); j >= 0; j--)
 	{
-		for (j = 0; j<cols; j++)
+		for (int k = 0; k<cols; k++)
 		{
-			window[i][j] = 32;
+			window[j][k] = 32;
 		}
 	}
 	return window;
@@ -36,7 +35,6 @@ void deinitWindow(int** window, int rows)
 
 void drawWindow(int** window, int rows, int cols)
 {
-
 	for (int i = (rows - 1); i >= 0; i--)
 	{
 		for (int j = 0; j<cols; j++)
@@ -68,7 +66,7 @@ void drawLineChar(int** window, int xStart, int yStart, int xEnd, int yEnd, char
 		dy = (double)deltaY / (double)absdeltaY;
 		for (int i = 0; i <= absdeltaY; i++)
 		{
-			window[(int)posY][(int)round(posX)] = character;
+			window[(int)posY][(int)(posX + 0.5)] = character;
 			posY += dy;
 			posX += dx;
 		}
@@ -79,7 +77,7 @@ void drawLineChar(int** window, int xStart, int yStart, int xEnd, int yEnd, char
 		dy = (double)deltaY / (double)absdeltaX;
 		for (int j = 0; j <= absdeltaX; j++)
 		{
-			window[(int)round(posY)][(int)posX] = character;
+			window[(int)(posY + 0.5)][(int)posX] = character;
 			posX += dx;
 			posY += dy;
 		}

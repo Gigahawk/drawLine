@@ -5,13 +5,16 @@
 
 int main()
 {
+	//Initializing an array to use as a window
+	int **window;
+	
 	// defining a window size 
 	int rows, cols;
 	rows = 30;
 	cols = 70;
 	
-	//Initializing a window with the above sizes (don't worry abt the int ** apparently it's too hard for APSC 160)
-	int **window = initWindow(rows, cols);
+	//Initializing array to be a window with the above sizes (don't worry abt the int ** apparently it's too hard for APSC 160)
+	window = initWindow(rows, cols);
 
 	/*Puts lines on the window in the shape of a star using '*'
 	 * NOTE: coordinates are zero-indexed
