@@ -3,7 +3,6 @@
 #include <math.h>
 #include "DrawLine.h"
 
-
 int ** initWindow(int rows, int cols)
 {
 	int **window;
@@ -13,7 +12,7 @@ int ** initWindow(int rows, int cols)
 		window[i] = (int *)malloc(cols * sizeof *window[i]);
 	}
 
-	for (int j = (rows - 1); j >= 0; j--)
+	for (int j = 0; j < rows; j++)
 	{
 		for (int k = 0; k<cols; k++)
 		{
@@ -33,6 +32,17 @@ void deinitWindow(int** window, int rows)
 	return;
 }
 
+void clearWindow(int** window, int rows, int cols){
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j<cols; j++)
+		{
+			window[i][j] = 32;
+		}
+		
+	}
+}
+
 void drawWindow(int** window, int rows, int cols)
 {
 	for (int i = (rows - 1); i >= 0; i--)
@@ -45,11 +55,22 @@ void drawWindow(int** window, int rows, int cols)
 	}
 }
 
+void drawLineDir(int** window, int xStart, int yStart, double dir, double length){
+	drawLine(window, xStart, yStart, XEND, YEND);
+	return;
+}
+
 void drawLine(int** window, int xStart, int yStart, int xEnd, int yEnd)
 {
 	drawLineChar(window, xStart, yStart, xEnd, yEnd, 48);
 	return;
 }
+
+void drawLineCharDir(int** window, int xStart, int yStart, double dir, double length, char character){
+	drawLineChar(window, xStart, yStart, XEND, YEND, character);
+	return;
+}
+
 
 void drawLineChar(int** window, int xStart, int yStart, int xEnd, int yEnd, char character)
 {

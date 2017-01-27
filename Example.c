@@ -13,7 +13,7 @@ int main()
 	rows = 30;
 	cols = 70;
 	
-	//Initializing array to be a window with the above sizes (don't worry abt the int ** apparently it's too hard for APSC 160)
+	//Initializing array to be a window with the above sizes 
 	window = initWindow(rows, cols);
 
 	/*Puts lines on the window in the shape of a star using '*'
@@ -33,7 +33,7 @@ int main()
 	//Prints out the window
 	drawWindow(window, rows, cols);
 
-	//deallocates the memory used by the window (good practice but yolo)
+	//deallocates the memory used by the window
 	deinitWindow(window, rows);
 
 	system("PAUSE");
