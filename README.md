@@ -14,5 +14,3 @@ Using this in Visual Studio:
 
 Usage Guidelines:
 - Don't put in negative coordinates, I didn't bother to write a check and I don't think they'll work, most likely you'll just get a segmentation fault and Visual Studio will complain about something. 
-
-- I don't think an implementation of fancyPic() as described by the worksheet would work very well here, but it shouldn't be that hard to make it work (just make the triangles bigger).
